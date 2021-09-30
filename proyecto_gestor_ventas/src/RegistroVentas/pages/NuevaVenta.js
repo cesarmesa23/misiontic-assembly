@@ -4,7 +4,7 @@ import "../../styles/styles.css"
 const NuevaVenta = () => {
     return (
         <div>
-          
+
             <main class="mainContainer">
 
                 <div class="contenedor-titulo">
