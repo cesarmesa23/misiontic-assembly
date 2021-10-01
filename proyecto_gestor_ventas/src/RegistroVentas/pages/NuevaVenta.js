@@ -1,7 +1,29 @@
 import React from 'react'
 import "../../styles/styles.css"
 
+
+
 const NuevaVenta = () => {
+
+const Productos=[
+    {
+        id:1,
+        nombre:"Televisor 60 pulgadas",
+        precioUnidad:2700000,
+    },
+    {
+        id:2,
+        nombre:"Equipo de sonido marca PGH",
+        precioUnidad:1200000,
+    },
+    {
+        id:3,
+        nombre:"Nevera 400L marca HHH",
+        precioUnidad:2200000,
+    }
+
+];
+    
     return (
         <div>
 
@@ -28,7 +50,7 @@ const NuevaVenta = () => {
 
                 <div class="contenedorAgregarProducto">
                     <div class="buscar">
-                        <input id="inputBuscar" placeholder="Buscar un producto" />
+                        <select id="inputBuscar" placeholder="Buscar un producto" />
                         <i class="fas fa-search botonGenerico iconoBusqueda"></i>
                     </div>
                     <div class="cantidad">
