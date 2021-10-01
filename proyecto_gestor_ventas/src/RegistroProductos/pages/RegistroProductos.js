@@ -1,5 +1,4 @@
 import React from 'react';
-import "./registroProducto.css";
 
 const RegistroProductos = () => {
 
