@@ -5,25 +5,25 @@ import "../../styles/styles.css"
 
 const NuevaVenta = () => {
 
-const Productos=[
-    {
-        id:1,
-        nombre:"Televisor 60 pulgadas",
-        precioUnidad:2700000,
-    },
-    {
-        id:2,
-        nombre:"Equipo de sonido marca PGH",
-        precioUnidad:1200000,
-    },
-    {
-        id:3,
-        nombre:"Nevera 400L marca HHH",
-        precioUnidad:2200000,
-    }
+    const Productos = [
+        {
+            id: 1,
+            nombre: "Televisor 60 pulgadas",
+            precioUnidad: 2700000,
+        },
+        {
+            id: 2,
+            nombre: "Equipo de sonido marca PGH",
+            precioUnidad: 1200000,
+        },
+        {
+            id: 3,
+            nombre: "Nevera 400L marca HHH",
+            precioUnidad: 2200000,
+        }
 
-];
-    
+    ];
+
     return (
         <div>
 
@@ -50,8 +50,13 @@ const Productos=[
 
                 <div class="contenedorAgregarProducto">
                     <div class="buscar">
-                        <select id="inputBuscar" placeholder="Buscar un producto" />
+                        <select id="inputBuscar" placeholder="Buscar un producto">
+                            {Productos.map((producto) => (
+                                <option value={producto.id}>{producto.nombre}</option>
+                            ))}
+                        </select>
                         <i class="fas fa-search botonGenerico iconoBusqueda"></i>
+
                     </div>
                     <div class="cantidad">
                         <input placeholder="Cantidad" />
@@ -172,7 +177,7 @@ const Productos=[
                 </div>
 
             </main>
-            
+
 
         </div>
     )
