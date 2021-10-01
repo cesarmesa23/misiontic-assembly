@@ -21,7 +21,7 @@ const Login = () => {
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Usuario</Form.Label>
-                <Form.Control type="email" placeholder="Ingrese su usuario" />
+                <Form.Control type="email" placeholder="Ingrese su usuario (correo)" />
                 <Form.Text className="text-muted">
                 
                 </Form.Text>

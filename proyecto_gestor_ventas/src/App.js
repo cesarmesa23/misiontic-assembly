@@ -7,6 +7,7 @@ import {BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
 
+import Footer from "./Shared/components/Footer";
 import Header from "./Shared/components/Header";
 import GestionUsuarios from "./GestionUsuarios/pages/GestionUsuarios";
 import ListadoProductos from "./ListadoProductos/pages/ListadoProductos";
@@ -41,6 +42,7 @@ const App = () => {
         
         <Redirect to="/"/>
       </Switch>
+      <Footer/>
    </Router>
   );
 }

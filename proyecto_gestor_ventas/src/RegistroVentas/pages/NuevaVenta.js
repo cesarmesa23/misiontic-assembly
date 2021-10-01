@@ -8,7 +8,7 @@ const NuevaVenta = () => {
             <main class="mainContainer">
 
                 <div class="contenedor-titulo">
-                    <h1 class="titulo">NUEVA VENTA</h1>
+                    <h1 class="titulo">Registro nueva venta</h1>
                 </div>
                 <div class="contenedor-span">
                     <span class="spanTexto">NombreCompletoVendedor+ID</span>
@@ -18,23 +18,23 @@ const NuevaVenta = () => {
                     </div>
                     <div class="contenedor-fechas">
 
-                        <label for="fechaDePago" class="fechaPago">Fecha de Pago</label>
+                        <label for="fechaDePago" class="fechaPago">Fecha de Pago  </label>
                         <input type="date" class="InputfechaDePago" id="fechaDePago" />
 
                     </div>
-                    <span class="spanTexto">Numero de venta BD</span>
+                    <span class="spanTexto">Número de venta BD</span>
                 </div>
 
 
                 <div class="contenedorAgregarProducto">
                     <div class="buscar">
-                        <input id="inputBuscar" placeholder="Buscar una producto" />
+                        <input id="inputBuscar" placeholder="Buscar un producto" />
                         <i class="fas fa-search botonGenerico iconoBusqueda"></i>
                     </div>
                     <div class="cantidad">
-                        <input placeholder="cantidad" />
+                        <input placeholder="Cantidad" />
                     </div>
-                    <div class="btnAgregarProducto">
+                    <div class="btnAgregarProducto bg-blue-500">
                         <button class="btnAgregar">Agregar</button>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const NuevaVenta = () => {
                                 </th>
                                 <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
                                     <div class="flex items-center justify-center">
-                                        Valor Unitario
+                                        Valor Unitario ($)
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -82,7 +82,7 @@ const NuevaVenta = () => {
 
                                 <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
                                     <div class="flex items-center justify-center">
-                                        Opcion
+                                        Opción
 
                                     </div>
                                 </th>
@@ -97,7 +97,7 @@ const NuevaVenta = () => {
                                 <td class="p-2 border-r">123.455</td>
                                 <td class="p-2 border-r">2</td>
                                 <td>
-                                    <a href="#" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
                                 </td>
                             </tr>
                             <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
@@ -106,7 +106,7 @@ const NuevaVenta = () => {
                                 <td class="p-2 border-r">10.395</td>
                                 <td class="p-2 border-r">1</td>
                                 <td>
-                                    <a href="#" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
                                 </td>
                             </tr>
                             <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
@@ -115,7 +115,7 @@ const NuevaVenta = () => {
                                 <td class="p-2 border-r">47.582</td>
                                 <td class="p-2 border-r">3</td>
                                 <td>
-                                    <a href="#" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
                                 </td>
                             </tr>
                             <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
@@ -124,7 +124,7 @@ const NuevaVenta = () => {
                                 <td class="p-2 border-r">58.980</td>
                                 <td class="p-2 border-r">4</td>
                                 <td>
-                                    <a href="#" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
                                 </td>
                             </tr>
                             <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
@@ -133,7 +133,7 @@ const NuevaVenta = () => {
                                 <td class="p-2 border-r">236.471</td>
                                 <td class="p-2 border-r">12</td>
                                 <td>
-                                    <a href="#" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -141,7 +141,7 @@ const NuevaVenta = () => {
                 </div>
                 <div class="contenedorValorTotal-Guardar">
                     <div class="valorTotal">
-                        <label for="valorTotal" class="LabelvalorTotal">Valor Total</label>
+                        <label for="valorTotal" class="LabelvalorTotal">Valor Total ($)</label>
                         <input type="text" class="InputValorTotal" name="valorTotal" id="valorTotal" readonly />
                         <button class="BtnGuardar">Guardar</button>
                     </div>
@@ -150,11 +150,7 @@ const NuevaVenta = () => {
                 </div>
 
             </main>
-            <footer>
-                <div class="contenedorFooter">
-                    <span class="textoFooter">Proyecto Mision TIC 2021</span>
-                </div>
-            </footer>
+            
 
         </div>
     )

@@ -17,10 +17,6 @@ const Header = () => {
                 <Nav.Link href="/RegistroProductos">Registro de Productos</Nav.Link>                
                 <Nav.Link href="/ListadoProductos">Listado de Productos</Nav.Link>
                 <Nav.Link href="/GestionUsuarios">Gestión de Usuarios</Nav.Link>
-
-
-
-
             </Nav>
             </Container>
         </Navbar>
