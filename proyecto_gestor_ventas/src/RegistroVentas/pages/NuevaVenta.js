@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "../../styles/styles.css"
 
 
@@ -23,6 +23,45 @@ const NuevaVenta = () => {
         }
 
     ];
+
+
+    const [productoSeleccionado, setProductoSeleccionado] = useState();
+    const [indiceProducto, setIndiceProducto] = useState();
+    const [cantidadVenta, setCantidadVenta] = useState();
+    const [listaVenta, setListaVenta] = useState([]);
+    //const [agregarProductos, setAgregarProductos] = useState([]);
+
+   /*  useEffect(() => {
+        console.log(cantidadVenta);
+        console.log(productoSeleccionado);
+        console.log(indiceProducto)
+        setAgregarProductos({
+            id: productoSeleccionado,
+            producto: indiceProducto,
+            cantidad: cantidadVenta
+        })
+    }, [cantidadVenta, productoSeleccionado]);
+ */
+
+
+
+    const agregarProducto = () => {
+        const agregarProductos = [
+            {
+                id: productoSeleccionado,
+                producto: indiceProducto,
+                cantidad: cantidadVenta,
+            }];
+        console.log("SE AGREGO UN NUEVO PRODUCTO A LA LISTA",agregarProductos)
+        setListaVenta([...listaVenta, agregarProductos]);
+        console.log(listaVenta);
+    }
+
+
+
+
+
+
 
     return (
         <div>
@@ -50,7 +89,11 @@ const NuevaVenta = () => {
 
                 <div class="contenedorAgregarProducto">
                     <div class="buscar">
-                        <select id="inputBuscar" placeholder="Buscar un producto">
+                        <select onChange={(e) => {
+                            setProductoSeleccionado(e.target.value)
+                            setIndiceProducto(e.target.options[e.target.selectedIndex].text)
+                        }}
+                            id="inputBuscar" placeholder="Buscar un producto">
                             {Productos.map((producto) => (
                                 <option value={producto.id}>{producto.nombre}</option>
                             ))}
@@ -59,10 +102,12 @@ const NuevaVenta = () => {
 
                     </div>
                     <div class="cantidad">
-                        <input placeholder="Cantidad" />
+                        <input value={cantidadVenta} onChange={(e) => {
+                            setCantidadVenta(e.target.value)
+                        }} placeholder="Cantidad" />
                     </div>
                     <div class="btnAgregarProducto bg-blue-500">
-                        <button class="btnAgregar">Agregar</button>
+                        <button onClick={agregarProducto} class="btnAgregar">Agregar</button>
                     </div>
                 </div>
 
@@ -117,52 +162,23 @@ const NuevaVenta = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            {listaVenta.map((item) => {
 
-                            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                <td class="p-2 border-r">1</td>
-                                <td class="p-2 border-r">Producto1</td>
-                                <td class="p-2 border-r">123.455</td>
-                                <td class="p-2 border-r">2</td>
-                                <td>
-                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                <td class="p-2 border-r">2</td>
-                                <td class="p-2 border-r">Producto2</td>
-                                <td class="p-2 border-r">10.395</td>
-                                <td class="p-2 border-r">1</td>
-                                <td>
-                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                <td class="p-2 border-r">3</td>
-                                <td class="p-2 border-r">Producto3</td>
-                                <td class="p-2 border-r">47.582</td>
-                                <td class="p-2 border-r">3</td>
-                                <td>
-                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                <td class="p-2 border-r">4</td>
-                                <td class="p-2 border-r">Producto4</td>
-                                <td class="p-2 border-r">58.980</td>
-                                <td class="p-2 border-r">4</td>
-                                <td>
-                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
-                                <td class="p-2 border-r">5</td>
-                                <td class="p-2 border-r">Producto5</td>
-                                <td class="p-2 border-r">236.471</td>
-                                <td class="p-2 border-r">12</td>
-                                <td>
-                                    <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
-                                </td>
-                            </tr>
+                                    return (
+                                        <tr class="bg-gray-100 text-center border-b text-sm text-gray-600">
+                                            <td class="p-2 border-r">{item.id}</td>
+                                            <td class="p-2 border-r">{item.producto}</td>
+                                            <td class="p-2 border-r">precio</td>
+                                            <td class="p-2 border-r">{item.cantidad}    </td>
+                                            <td>
+                                                <a href="#" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Borrar</a>
+                                            </td>
+                                        </tr>
+                                    );
+                                })
+
+
+                            }
                         </tbody>
                     </table>
                 </div>
